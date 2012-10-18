@@ -8,10 +8,10 @@ CPPFLAGS = -Wall -Wextra -Werror -Weffc++ -pedantic
 
 all: $(BUILD)/main $(TEST)/sparse_test
 
-$(BUILD)/main: $(SRC)/Sparse.cpp $(SRC)/Sparse.o
+$(BUILD)/main: 
 	cd $(SRC); $(MAKE)
 
-$(TEST)/sparse_test: $(TEST)/Sparse.cpp $(SRC)/Sparse.o
+$(TEST)/sparse_test: 
 	cd $(TEST); $(MAKE)
 
 twoDSparse: twoDSparse/sparse_test.cpp twoDSparse/TwoDSparse.o

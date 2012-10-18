@@ -1,6 +1,6 @@
 BUILD = ../../build
 CPP = g++
-CPPFLAGS = -Wall -Wextra -Werror -Weffc++ -pedantic
+CPPFLAGS = -Wall -Wextra -Werror -pedantic
 
 main: sparse_test.cpp TwoDSparse.o
 	$(CPP) $(CPPFLAGS) -o $(BUILD)/twoDSparse sparse_test.cpp TwoDSparse.o

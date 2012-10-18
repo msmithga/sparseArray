@@ -4,8 +4,8 @@
 template <typename T>
 class RegSparse {
  private:
-  int r;
-  int c;
+  int rows;
+  int cols;
   T def;
 
  public:
@@ -14,6 +14,8 @@ class RegSparse {
   void insert(int r, int c, T value);
   T access(int r, int c);
   void remove(int r, int c);
+  int getNumRows();
+  int getNumCols();
 };
 
 

@@ -4,8 +4,8 @@
 template <typename T>
 class TwoDSparse {
  private:
-  int r;
-  int c;
+  int rows;
+  int cols;
   T def;
 
  public:

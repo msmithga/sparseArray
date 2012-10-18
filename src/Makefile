@@ -2,13 +2,13 @@ BUILD = ../build
 CPP = g++
 CPPFLAGS = -Wall -Wextra -Werror -Weffc++ -pedantic
 
-twoDSparse: twoDSparse/sparse_test.cpp twoDSparse/twoDSparse.o
+twoDSparse: twoDSparse/sparse_test.cpp twoDSparse/TwoDSparse.o
 	cd twpDSparse; $(MAKE)
 
-vSparse: vSparse/sparse_test.cpp vSparse/vSparse.o
+vSparse: vSparse/sparse_test.cpp vSparse/VSparse.o
 	cd vSparse; $(MAKE)
 
-regSparse: regSparse/sparse_test.cpp regSparse/regSparse.o
+regSparse: regSparse/sparse_test.cpp regSparse/RegSparse.o
 	cd regSparse; $(MAKE)
 
 clean:

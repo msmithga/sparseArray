@@ -5,9 +5,9 @@
 
 template <typename T>
 TwoDSparse<T>::TwoDSparse(int r, int c, T def) {
-  rows = r;
-  cols = c;
-  value = def;
+  r = 20;
+  c = 20;
+  def = null;
 }
 
 template <typename T>
@@ -17,17 +17,23 @@ TwoDSparse<T>::~TwoDSparse() {
 
 template <typename T>
 void TwoDSparse<T>::insert(int r, int c, T v) {
-
+  rows = r;
+  cols = c;
+  value = v;
 }
 
 template <typename T>
 T TwoDSparse<T>::access(int r, int c) {
-  T value;
+  rows = r;
+  cols = c;
+  value;
   return value;
 }
 
 template <typename T>
 void TwoDSparse<T>::remove(int r, int c) {
+  rows = r;
+  cols = c;
 
 }
 
@@ -44,7 +50,7 @@ int TwoDSparse<T>::getNumRows() {
 
 template <typename T>
 int TwoDSparse<T>::getNumCols() {
-  int cols = o;
+  int cols = 0;
   return cols;
 }
 

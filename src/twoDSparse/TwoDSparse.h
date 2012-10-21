@@ -7,9 +7,10 @@ class TwoDSparse {
   int rows;
   int cols;
   T def;
+  T** theArray;
 
  public:
-  TwoDSparse<T>(int r, int c, T def);
+  TwoDSparse<T>(int r, int c, T d);
   ~TwoDSparse<T>();
   void insert(int r, int c, T v);
   T access(int r, int c);

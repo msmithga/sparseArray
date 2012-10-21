@@ -7,11 +7,13 @@ using std::cout;
 using std::endl;
 
 int main() {
-  TwoDSparse<int>* t = new TwoDSparse<int>(10,10,0);
+   TwoDSparse<int>* t = new TwoDSparse<int>(4,4,0);
 
-  for(int i = 0; i < 10; ++i) {
-    cout << t[i] << endl;
-  }
+   t->insert(0,0,1);
+
+   t->access(0,0);
+
+   t->print();
 
   return 0;
 

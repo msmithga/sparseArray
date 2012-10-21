@@ -9,7 +9,7 @@ TwoDSparse<T>::TwoDSparse(int r, int c, T d) {
   cols = c;
   def = d;
 
-  T** theArray = new T*[rows];
+ theArray = new T*[rows];
 
   for(int i = 0; i < rows; ++i) {
     theArray[i] = new T[cols];
@@ -25,38 +25,53 @@ TwoDSparse<T>::TwoDSparse(int r, int c, T d) {
 
 template <typename T>
 TwoDSparse<T>::~TwoDSparse() {
-
+  delete theArray;
 }
 
 template <typename T>
 void TwoDSparse<T>::insert(int r, int c, T v) {
-  r = 20;
-  c = 20;
-  v = 0;
+  int i = r;
+  int j = c;
+  T value = v;
+  theArray[i][j] = value;
 }
 
 template <typename T>
 T TwoDSparse<T>::access(int r, int c) {
-  r = 20;
-  c = 20;
-  return 0;
+  int x = r;
+  int y = c;
+  int value;
+
+  for(int i = 0; i <= x; ++i) {
+    for(int j = 0; j <= y; ++j) {
+      value = theArray[i][j];
+    }
+  }
+  std::cout << value << std::endl;
+ 
+  return value;
 }
 
 template <typename T>
 void TwoDSparse<T>::remove(int r, int c) {
-  r = 20;
-  c = 20;
+  int x = r;
+  int y = c;
+
+  for(int i = 0; i <= x; ++i) {
+    for(int j = 0; j <= y; ++j) {
+      def = theArray[i][j];
+    }
+  }
 
 }
 
 template <typename T>
 void TwoDSparse<T>::print() {
-  //  for(int i = 0; i < getNumRows(); ++i) {
-  //std::cout << theArray[i] << std::endl;
-  //for(int j = 0; j < getNumCols(); ++j) {
-  //  std::cout << theArray[j] << std::endl;
-  // }
-  // }
+    for(int i = 0; i < getNumRows(); ++i) {
+      for(int j = 0; j < getNumCols(); ++j) {
+        std::cout << theArray[i][j] << std::endl;
+      }
+   }
 }
 
 template <typename T>

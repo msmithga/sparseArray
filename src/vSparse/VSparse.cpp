@@ -4,11 +4,22 @@
 
 #include "VSparse.h"
 
+using std::vector;
+
 template <typename T>
 VSparse<T>::VSparse(int r, int c, T d) {
   rows = r;
   cols = c;
   def = d;
+
+  theVector = new vector< vector<T> >;
+
+  for(int i = 0; i < rows; ++i) {
+    for(int j = 0; j < cols; ++j) {
+      theVector->push_back(def);
+    }
+  }
+
 }
 
 template <typename T>
@@ -18,9 +29,11 @@ VSparse<T>::~VSparse() {
 
 template <typename T>
 void VSparse<T>::insert(int r, int c, T v) {
-  r = 20;
-  c = 20;
-  v = 0;
+  int i = r;
+  int j =  c;
+  int value = v;
+
+  theVector->push_back(value);
 }
 
 template <typename T>

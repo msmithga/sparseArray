@@ -7,11 +7,12 @@ class VSparse {
   int rows;
   int cols;
   T def;
+  T* theVector;
 
  public:
-  VSparse<T>(int r, int c, T def);
+  VSparse<T>(int r, int c, T d);
   ~VSparse<T>();
-  void insert(int r, int c, T value);
+  void insert(int r, int c, T v);
   T access(int r, int c);
   void remove(int r, int c);
   void print();

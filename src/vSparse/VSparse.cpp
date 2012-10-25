@@ -12,13 +12,11 @@ VSparse<T>::VSparse(int r, int c, T d) {
   cols = c;
   def = d;
 
-  theVector = new vector< vector<T> >;
+  theVector = new vector<vector<T>>();
 
-  for(int i = 0; i < rows; ++i) {
-    for(int j = 0; j < cols; ++j) {
-      theVector->push_back(def);
-    }
-  }
+  for(vector<T>::iterator it = v.begin(); it != end(); ++it) {
+    v.push_back(def);
+
 
 }
 

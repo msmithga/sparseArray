@@ -7,7 +7,7 @@ class VSparse {
   int rows;
   int cols;
   T def;
-  T* theVector;
+  std::vector<std::vector<T>>* theVector;
 
  public:
   VSparse<T>(int r, int c, T d);

@@ -4,7 +4,7 @@ LIB = ./lib
 SRC = ./src
 
 CPP = g++
-CPPFLAGS = -Wall -Wextra -Werror -Weffc++ -pedantic
+CPPFLAGS = -Wall -Wextra -Werror -pedantic
 
 all: $(BUILD)/main $(TEST)/sparse_test
 

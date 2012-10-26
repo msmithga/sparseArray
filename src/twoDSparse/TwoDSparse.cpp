@@ -40,7 +40,7 @@ template <typename T>
 T TwoDSparse<T>::access(int r, int c) {
   int x = r;
   int y = c;
-  int value;
+  T value;
 
   for(int i = 0; i <= x; ++i) {
     for(int j = 0; j <= y; ++j) {
@@ -54,15 +54,7 @@ T TwoDSparse<T>::access(int r, int c) {
 
 template <typename T>
 void TwoDSparse<T>::remove(int r, int c) {
-  int x = r;
-  int y = c;
-
-  for(int i = 0; i <= x; ++i) {
-    for(int j = 0; j <= y; ++j) {
-      def = theArray[i][j];
-    }
-  }
-
+  theArray[r][c] = def;
 }
 
 template <typename T>
@@ -86,4 +78,4 @@ int TwoDSparse<T>::getNumCols() {
 
 template class TwoDSparse<int>;
 template class TwoDSparse<double>;
-//template class TwoDSparse<std::string>;
+template class TwoDSparse<std::string>;

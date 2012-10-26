@@ -1,13 +1,15 @@
 #ifndef __V_SPARSE_H__
 #define __V_SPARSE_H__
 
+#include <vector>
+
 template <typename T>
 class VSparse {
  private:
   int rows;
   int cols;
   T def;
-  std::vector<std::vector<T>>* theVector;
+  std::vector<std::vector<T> >* theVector;
 
  public:
   VSparse<T>(int r, int c, T d);

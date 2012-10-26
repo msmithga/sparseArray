@@ -38,13 +38,11 @@ void RegSparse<T>::remove(int r, int c) {
 
 template <typename T>
 int RegSparse<T>::getNumRows() {
-
   return 0;
 }
 
 template <typename T>
 int RegSparse<T>::getNumCols() {
-
   return 0;
 }
 

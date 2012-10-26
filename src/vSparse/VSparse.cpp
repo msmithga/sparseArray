@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <vector>
 
 #include "VSparse.h"
 
@@ -12,60 +11,62 @@ VSparse<T>::VSparse(int r, int c, T d) {
   cols = c;
   def = d;
 
-  theVector = new vector<vector<T>>();
+  theVector = new vector<vector<T> >(rows);
 
-  for(vector<T>::iterator it = v.begin(); it != end(); ++it) {
-    v.push_back(def);
+  vector<T> tempVector;
 
+  for(int i = 0; i < rows; ++i) {
+    theVector->push_back(tempVector);
+  }
 
+  for(int i = 0; i < rows; ++i) {
+    for(int j = 0; j < cols; ++j) {
+      (*theVector)[i].push_back(def);
+    }
+  }
 }
 
 template <typename T>
 VSparse<T>::~VSparse() {
-
+  delete[] theVector;
 }
 
 template <typename T>
 void VSparse<T>::insert(int r, int c, T v) {
-  int i = r;
-  int j =  c;
-  int value = v;
-
-  theVector->push_back(value);
+  (*theVector)[r][c] = v;
 }
 
 template <typename T>
 T VSparse<T>::access(int r, int c) {
-  r = 20;
-  c = 20;
-  return 0;
+  return (*theVector)[r][c];
 }
 
 template <typename T>
 void VSparse<T>::remove(int r, int c) {
-  r = 20;
-  c = 20;
+  (*theVector)[r][c] = def;
 }
 
 template <typename T>
 void VSparse<T>::print() {
-
+  for(int i = 0; i < rows; ++i) {
+    for(int j = 0; j < cols; ++j) {
+      std::cout << (*theVector)[i][j] << std::endl;
+    }
+  }
 }
 
 template <typename T>
 int VSparse<T>::getNumRows() {
-  int rows = 0;
   return rows;
 }
 
 template <typename T>
 int VSparse<T>::getNumCols() {
-  int cols = 0;
   return cols;
 }
 
 
 template class VSparse<int>;
 template class VSparse<double>;
-//template class VSparse<std::string>;
-//template class VSparse<vector>;
+template class VSparse<std::string>;
+

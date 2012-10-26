@@ -16,9 +16,8 @@ TwoDSparse<T>::TwoDSparse(int r, int c, T d) {
   }
 
   for(int i = 0; i < rows; ++i) {
-   *theArray[i] = def;
     for(int j = 0; j < cols; ++j) {
-      *theArray[j] = def;
+      theArray[i][j] = def;
     }
   }
 }

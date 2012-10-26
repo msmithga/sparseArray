@@ -93,4 +93,19 @@ TEST(TwoDTest, GetNumRows) {
 }
 
 TEST(TwoDTest, GetNumCols) {
-  TwoDSparse<int>* t = 
+  TwoDSparse<int>* t = TwoDSparse<int>(4,3,0);
+
+  EXPECT_EQ(3, t->getNumCols());
+
+  TwoDSparse<double>* d = new TwoDSparse<double>(4,5, 0.0);
+
+  EXPECT_EQ(5, d->getNumCols());
+
+  TwoDSparse<std::string>* s = new TwoDSparse<std::string>(3,4, "hello");
+
+  EXPECT_EQ(4, s->getNumCols());
+
+  delete t;
+  delete d;
+  delete s;
+}

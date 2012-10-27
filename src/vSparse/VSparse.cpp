@@ -28,7 +28,7 @@ VSparse<T>::VSparse(int r, int c, T d) {
 
 template <typename T>
 VSparse<T>::~VSparse() {
-  delete[] theVector;
+  delete theVector;
 }
 
 template <typename T>

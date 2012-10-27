@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 #include "../../src/twoDSparse/TwoDSparse.h"
 
-/*TEST(TwoDTest, Insert) {
+TEST(TwoDTest, Insert) {
   TwoDSparse<int>* t = new TwoDSparse<int>(4,4,6);
   t->insert(2,2,7);
 
@@ -21,9 +21,9 @@
   delete d;
   delete s;
 
-  }*/
+ }
 
-/*TEST(TwoDTest, Remove) {
+TEST(TwoDTest, Remove) {
   TwoDSparse<int>* t = new TwoDSparse<int>(4,4,6);
   t->insert(2, 2, 7);
 
@@ -54,7 +54,7 @@
   delete t;
   delete d;
   delete s;
-  }*/
+ }
 
 TEST(TwoDTest, Access) {
   TwoDSparse<int>* t = new TwoDSparse<int>(4,4,0);
@@ -74,7 +74,7 @@ TEST(TwoDTest, Access) {
   delete s;
 }
 
-/*TEST(TwoDTest, GetNumRows) {
+TEST(TwoDTest, GetNumRows) {
   TwoDSparse<int>* t = new TwoDSparse<int>(3,3,0);
   
   EXPECT_EQ(3, t->getNumRows());
@@ -109,4 +109,4 @@ TEST(TwoDTest, GetNumCols) {
   delete d;
   delete s;
 
-  }*/
+ }

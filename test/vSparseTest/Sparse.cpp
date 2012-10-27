@@ -78,3 +78,37 @@ TEST(VTest, Remove) {
  }
 
 TEST(VTest, GetNumRows) {
+  VSparse<int>* v = new VSparse<int>(4,3,0);
+
+  EXPECT_EQ(4, v->getNumRows());
+
+  VSparse<double>* d = new VSparse<double>(3,4,0.0);
+
+  EXPECT_EQ(3, d->getNumRows());
+
+  VSparse<std::string>* s = new VSparse<std::string>(5,4,"hello");
+
+  EXPECT_EQ(5, s->getNumRows());
+
+  delete v;
+  delete d;
+  delete s;
+}
+
+TEST(VTest, GetNumCols) {
+  VSparse<int>* v = new VSparse<int>(4,3,0);
+
+  EXPECT_EQ(3, v->getNumCols());
+
+  VSparse<double>* d = new VSparse<double>(3,4,0.0);
+
+  EXPECT_EQ(4, d->getNumCols());
+
+  VSparse<std::string>* s = new VSparse<std::string>(5,4,"hello");
+
+  EXPECT_EQ(4, s->getNumCols());
+
+  delete v;
+  delete d;
+  delete s;
+}
